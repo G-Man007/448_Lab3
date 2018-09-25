@@ -1,0 +1,97 @@
+<html>
+    <head>
+		<title> CSS Manipulation </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+               <h1 style="text-align:center;">Human Family</h1>
+                <h4 style="text-align:center;">A Poem by Maya Angelou</h4>
+       <p style="border:3px; border-style:solid; border-color:rgb(230,0,0); padding: 1em;" align="center">
+I note the obvious differences
+in the human family.
+Some of us are serious,
+some thrive on comedy.
+
+Some declare their lives are lived
+as true profundity,
+and others claim they really live
+the real reality.
+
+The variety of our skin tones
+can confuse, bemuse, delight,
+brown and pink and beige and purple,
+tan and blue and white.
+
+I've sailed upon the seven seas
+and stopped in every land,
+I've seen the wonders of the world
+not yet one common man.
+
+I know ten thousand women
+called Jane and Mary Jane,
+but I've not seen any two
+who really were the same.
+
+Mirror twins are different
+although their features jibe,
+and lovers think quite different thoughts
+while lying side by side.
+
+We love and lose in China,
+we weep on England's moors,
+and laugh and moan in Guinea,
+and thrive on Spanish shores.
+
+We seek success in Finland,
+are born and die in Maine.
+In minor ways we differ,
+in major we're the same.
+
+I note the obvious differences
+between each sort and type,
+but we are more alike, my friends,
+than we are unalike.
+
+We are more alike, my friends,
+than we are unalike.
+
+We are more alike, my friends,
+than we are unalike</p>
+        
+            <script type="text/javascript">       
+               function mClicked(){
+                    var red = document.getElementById("red").value;
+                    var blue = document.getElementById("blue").value;
+                    var green = document.getElementById("green").value;
+                    var width = document.getElementById("width").value;
+                    var redBorder = document.getElementById("redBorder").value;
+                    var blueBorder = document.getElementById("blueBorder").value;
+                    var greenBorder = document.getElementById("greenBorder").value;
+                    $("p").css("background-color","rgb("+redBorder+","+greenBorder+","+blueBorder+")");
+                    $("p").css("border-color","rgb("+red+","+green+","+blue+")");
+                    $("p").css("border-width",width+"px");
+                    return false;
+                }
+            </script>
+        
+            <form id="Form" onsubmit="return mClicked()">
+
+                    <br>Background Color<br>
+                    Red :&nbsp;<input type="text" id="redBorder" value="">
+                    Green :&nbsp;<input type="text" id="greenBorder" value="">
+                    Blue :&nbsp;<input type="text" id="blueBorder" value="">
+                    <span id = "messages"style="color:red"> </span>
+                
+                    <br><br>Border Color<br>
+                    Red :&nbsp;<input type="text" id="red" value="">
+                    Green :&nbsp;<input type="text" id="green" value="">
+                    Blue :&nbsp;<input type="text" id="blue" value="">
+                    Width :&nbsp;<input type="text" id="width" value="">
+                
+                <br><input id="submitColor" value="COLOR" type="submit" /><br>
+                Choose the presentation of this poem using RGB values 0-255.<br>
+            </form>
+        
+	</body>
+</html>

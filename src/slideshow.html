@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple SLideshow</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="slideStyle.css" rel="stylesheet" type="text/css"/> 
+</head>
+<body>
+
+	<div id="slider">
+		<div id="box">
+			<img src="images/a.jpg">
+		</div>
+
+		<!-- buttons for controls slider -->
+		<button class="prew fa fa-chevron-left" onclick="prewPic()"></button>
+		<button class="next fa fa-chevron-right" onclick="nextPic()"></button>
+	</div>
+
+  <script type="text/javascript">
+
+  	var slider_content = document.getElementById('box');
+
+  	// contains images in an array
+    var pic = ['a','b', 'c', 'd','e','f','g'];
+      
+      // all provided pictures have been taken by author Grant
+    var i = pic.length;
+
+
+    // function for next slide 
+
+    function nextPic(){
+    	if (i<pic.length) {
+    		i= i+1;
+    	}else{
+    		i = 1;
+    	}
+    	  slider_content.innerHTML = "<img src=images/"+pic[i-1]+".jpg>";
+    }
+
+
+    // function for previous slide
+
+    function prewPic(){
+
+    	if (i<pic.length+1 && i>1) {
+    		i= i-1;
+    	}else{
+    		i = pic.length;
+    	}
+    	  slider_content.innerHTML = "<img src=images/"+pic[i-1]+".jpg>";
+
+    }
+
+  // setInterval moves the slideshow along automatically
+
+  setInterval(nextPic , 5000);
+
+  </script>
+
+</body>
+</html>
